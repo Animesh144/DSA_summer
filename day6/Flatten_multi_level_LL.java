@@ -1,8 +1,6 @@
-package day6;
-
 import java.util.Scanner;
 
-public class flattenMultilevelLL {
+public class Flatten_multi_level_LL {
     public static void main(String[] args){
         Scanner sc =new Scanner(System.in);
         LinkedList li =new LinkedList();
@@ -16,7 +14,6 @@ public class flattenMultilevelLL {
     }
     
 }
-
 class LinkedList{
     class Node{
         int data;
