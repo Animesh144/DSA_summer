@@ -1,16 +1,5 @@
-public class index {
-    
-}
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+package leetcode.Linkedlist;
+
 class Solution {
     public ListNode insertGreatestCommonDivisors(ListNode head) {
         ListNode current=head;
@@ -25,11 +14,18 @@ class Solution {
         }
         return head;
     }
-    public static int GCD(int a,int b){
+    public int GCD(int a,int b){
         if (b==0){
             return a;
         }else{
-            GCD(b,a%b);
+            return GCD(b,a%b);
         }
     }
+}
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }

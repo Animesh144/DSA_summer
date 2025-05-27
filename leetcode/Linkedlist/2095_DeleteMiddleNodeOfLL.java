@@ -1,3 +1,4 @@
+package leetcode.Linkedlist;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -29,7 +30,7 @@ class Solution {
     }
 }
 // method 2
-class Solution {
+class Solution2 {
     public ListNode deleteMiddle(ListNode head) {
         if(head.next==null){
             head=null;
