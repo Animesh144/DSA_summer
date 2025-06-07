@@ -2,7 +2,7 @@ package day19;
 import java.util.*;
 
 
-public class AdjecencyMatrix {
+public class AdjecencyMatrixDFS {
     public static void main(String[] args){
         Scanner read = new Scanner (System.in);
         int v = read.nextInt();
