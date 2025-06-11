@@ -37,7 +37,7 @@ public class primsAlgorithm {
         sum+=temp.w;
         for(int i=0;i<v;i++){
           int weight = graph[temp.d][i];
-          if(!vis[i]){
+          if(!vis[i] && graph[temp.d][i] != Integer.MAX_VALUE){
             pq.add(new Edge(temp.d,i,weight));
           }
         }
