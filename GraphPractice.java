@@ -30,6 +30,7 @@ public class GraphPractice {
         read.close();
 
     }
+
     public static void DFSADjcencyMatrix(int[][] graph, int v,int e,boolean[] vis,int index){
         vis[index] = true;
         System.out.print(index+" ");
@@ -38,8 +39,6 @@ public class GraphPractice {
                 DFSADjcencyMatrix(graph, v, e, vis, i);
             }
         }
-
-
     }
     public static void DFSAdjcencyList(ArrayList<ArrayList<Integer>> graph,int v, int e,boolean[] vis,int index){
         vis[index] = true;
