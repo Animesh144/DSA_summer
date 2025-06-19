@@ -1,6 +1,5 @@
 import java.util.*;
 
-import day23.bellmanFordAlgorithm;
 // sample input for Dijkstra - op = 19
 // 6 8
 // 0 1 7
@@ -40,19 +39,20 @@ public class GraphPractice2 {
         int e = read.nextInt();
         int[][] graphMatrix = new int [v][v]; // adjcency matrix representation of graph
         ArrayList<EdgeList> graphEdgeList = new ArrayList<>(); // Edge list representation of graph
-        // WeightedAdjMatrix(graphMatrix, v, e, read);
-        // WeightedAdjList(graph, v, e, read);
+        WeightedAdjMatrix(graphMatrix, v, e, read);
+        WeightedAdjList(graph, v, e, read);
         WeightedEdgeList(graphEdgeList,v,e,read);
-        // int res = primsAlgoUsingAdjMatrix(graphMatrix,v,e);
-        // int resKruskal = kruskalsAlgorithm(graphEdgeList, v, res);
-        // System.out.println(resKruskal);
-        // System.out.println(res);
-        // int resDijkstra = DijkstraAlgorithm(graph,v,e,0);
-        // System.out.println(resDijkstra);
+        int res = primsAlgoUsingAdjMatrix(graphMatrix,v,e);
+        int resKruskal = kruskalsAlgorithm(graphEdgeList, v, res);
+        System.out.println(resKruskal);
+        System.out.println(res);
+        int resDijkstra = DijkstraAlgorithm(graph,v,e,0);
+        System.out.println(resDijkstra);
         int[] resBellmanFord = BellmanFordAlgorithm(graphEdgeList, v, e, 0);
+        System.out.println(resBellmanFord);
         read.close();
     }
-    public static int[] BellmanFordAlgorithm(ArrayList<EdgeList> graph , int v, int e, int k){
+    public static int[] BellmanFordAlgorithm(ArrayList<EdgeList> graph , int v, int e, int k){  
         int[] d = new int[v];
         Arrays.fill(d,Integer.MAX_VALUE);
         d[k] = 0;
