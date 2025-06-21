@@ -6,6 +6,7 @@ public class VerifyPreorderSerailizationOfBinaryTree_331 {
         Scanner read = new Scanner(System.in);
         read.close();
     }
+    public static boolean is
     public static void levelOrderInsertion(TreeNode root, Scanner read){
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
