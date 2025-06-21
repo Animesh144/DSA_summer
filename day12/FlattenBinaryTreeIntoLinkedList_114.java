@@ -17,10 +17,20 @@ import java.util.*;
 // }
 
 public class FlattenBinaryTreeIntoLinkedList_114 {
+    TreeNode t = null;
     public static void main(String[] args){
         Scanner read = new Scanner(System.in);
         read.close();
     }
+    public void FlattenBinaryTreeIntoLinkedListSolution(TreeNode root){
+        if(root == null) return;
+        FlattenBinaryTreeIntoLinkedListSolution(root.right);
+        FlattenBinaryTreeIntoLinkedListSolution(root.left);
+        root.right = t;
+        root.left = null;
+        t = root;
+    }
+
     public static void levelOrderInsertion(TreeNode root, Scanner read){
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);

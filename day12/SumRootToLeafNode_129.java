@@ -49,10 +49,29 @@ import java.util.Scanner;
 // }
 
 public class SumRootToLeafNode_129 {
+    static int sum = 0 ;
     public static void main(String[] args){
         Scanner read = new Scanner(System.in);
-
+        int rootVal = read.nextInt();
+        TreeNode root = new TreeNode(rootVal);
+        levelOrderInsertion(root, read);
+        System.out.println(SumRootToLeafNodeSolution(root));
         read.close();
+    }
+    public static int SumRootToLeafNodeSolution(TreeNode root){
+        int num = 0;
+        dfs(root,num);
+        return sum;
+    }
+    public static void dfs(TreeNode root, int num){
+        if(root == null) return;
+        num = num*10 + root.val;
+        if(root.left == null && root.right == null){
+            sum += num;
+            return;
+        }
+        dfs(root.left ,num);
+        dfs(root.right,num);
     }
     public static void levelOrderInsertion(TreeNode root, Scanner read){
         Queue<TreeNode> q = new LinkedList<>();
